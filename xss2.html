@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>XSS Stored</title>
+</head>
+<body>
+	<h1>XSS Stored</h1>
+<!-- pasek --><tr><td  height="3" colspan="11" bgcolor="#00457C" valign="middle" align="center" class="Center"></td></tr>      
+ <tr> 
+          <td  colspan="11" >
+
+    <style>
+      /* ------------------------CZĘĆ-GÓRNA-MENU------------------------ */
+
+      /* wyglšd głównego elementu - ol */
+      ol {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        background-color:#FFFFFF;
+        font-size:12px;
+        height:2em;
+        line-height:2em;
+        text-align:center;
+      }
+
+      /* wyglšd wszystkich elementów - a - znajdujšcych się w elemencie - ol */
+      ol a {
+        display:block;
+        text-decoration:none;
+        color:#ffffff;
+        padding:0 5px;
+      }
+
+      /* wyglšd elementów - li - wszystkich dzieci elementu - ol */
+      ol > li {
+        float:left;
+        width:165px;
+        margin-left:1px;
+        background-color:#ff0033;
+        height:2em;
+      }
+
+      /* wyglšd elementu - li - pierwszego dziecka elementu - ol */
+      ol > li:first-child {
+        margin-left:0;
+
+      }
+
+      /* wyglšd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover {
+        background-color:#00457c;
+      }
+
+      /* wyglšd elementu - a - dziecka elementu - li - będšcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > a {
+        color:#ffffff;
+      }
+
+      /* wyglšd elementu - ul - dziecka elementu - li - będšcego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > ul {
+        display:block;
+      }
+
+      /* ------------------------CZĘĆ-ROZWIJANA-MENU------------------------ */
+
+      /* wyglšd głównych rozwijanych elementów - ul */
+      ol > li > ul {
+        display:none;
+        list-style-type:none;
+
+        padding:0;
+        margin:0;
+      }
+
+      /* wyglšd elementu - li - w częci rozwijanej */
+      ol > li > ul > li {
+        position:relative;
+        background-color:#EEE;
+      }
+
+      /* wyglšd elementu - a - w częci rozwijanej */
+      ol > li > ul > li > a {
+        border-top:1px solid #fff;
+      }
+
+      /* wyglšd elementu - li - w częci rozwijanej, po najechaniu kursorem myszki na dany element - li */
+      ol > li > ul > li:hover {
+        background-color:#DDD;
+      }
+
+      /* wyglšd elementu - a - w częci rozwijanej, po najechaniu kursorem myszki na element - li */
+      ol > li > ul > li:hover > a {
+        color:#00457c;
+      }
+    </style>
+<center>
+  <ol>
+	<li><a href="xss.html" style ='color:#ffffff' style ='text-decoration:none'  ><B>XSS</B></a>
+	<li><a href="xss2.html" style ='color:#ffffff' style ='text-decoration:none'  ><B>XSS Stored</B></a>
+</center>
+	<h2>What's XSS?</h2>
+	<p>
+		XSS (Cross Site Scripting)is a type of computer security vulnerability typically found in web applications. XSS enables attackers to inject client-side scripts into web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same-origin policy.
+		Cross-site scripting carried out on websites accounted for roughly 84% of all security vulnerabilities documented by Symantec as of 2007.[1] Bug bounty company HackerOne in 2017 reported that XSS is still a major threat vector.[2] XSS effects vary in range from petty nuisance to significant security risk, depending on the sensitivity of the data handled by the vulnerable site and the nature of any security mitigation implemented by the site's owner.
+	</p>
